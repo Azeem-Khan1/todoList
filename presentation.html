@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Todo List Presentation</title>
+    </head>
+    <body>
+        <div class="slide">
+            <h1>Todo List Project</h1>
+            <p>
+                Welcome to the Todo List project presentation. In this project,
+                we will create a simple and interactive todo list application
+                using HTML, CSS, and JavaScript.
+            </p>
+        </div>
+
+        <div class="slide" id="overview">
+            <h2>Project Overview</h2>
+            <ul>
+                <li>Create a todo list interface</li>
+                <li>Add functionality to add new todos</li>
+                <li>Allow editing and deleting todos</li>
+                <li>Implement marking todos as completed</li>
+                <li>Persist the todo list using local storage</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>In-Depth JavaScript Breakdown</h2>
+                <ol>
+                    <li>
+                        Get references to the necessary HTML elements:
+                        <ul>
+                            <li>todoInput: Represents the input field where the user enters new todos.</li>
+                            <li>addBtn: Represents the button to add a new todo.</li>
+                            <li>todoList: Represents the unordered list (UL) where the todos will be displayed.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Enable the Enter key to add a new todo:
+                        <ul>
+                            <li>Attach an event listener to the todoInput element for the keyup event.</li>
+                            <li>When the Enter key (key code 13) is pressed, trigger the addBtn.click() function.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Initialize the todos array:
+                        <ul>
+                            <li>Create an empty array to store the todos.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Check local storage for existing todos:
+                        <ul>
+                            <li>
+                                If there are todos stored in the local storage, retrieve and parse them into the todos array.
+                            </li>
+                            <li>Call the renderTodos() function to display the todos on the page.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Add a new todo:
+                        <ul>
+                            <li>
+                                Attach a click event listener to the addBtn button.
+                            </li>
+                            <li>
+                                When the button is clicked, perform the following steps:
+                                <ul>
+                                    <li>Retrieve the trimmed value from the todoInput field.</li>
+                                    <li>
+                                        If the input is not empty, create a new todo object with a unique ID, the input text,
+                                        and a completion status of false.
+                                    </li>
+                                    <li>Add the new todo to the todos array.</li>
+                                    <li>Save the updated todos array to local storage.</li>
+                                    <li>Call the renderTodos() function to update the displayed todos on the page.</li>
+                                    <li>Reset the todoInput value to an empty string.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Edit a todo:
+                        <ul>
+                            <li>
+                                Attach a click event listener to the todoList element.
+                            </li>
+                            <li>
+                                When a click event occurs on an element with the class todo-text, perform the following steps:
+                                <ul>
+                                    <li>Retrieve the ID of the parent element (list item) from the data-id attribute.</li>
+                                    <li>Find the corresponding todo in the todos array.</li>
+                                    <li>Prompt the user to enter the updated text for the todo.</li>
+                                    <li>
+                                        If the user provides a new text (not null), update the todo's text property and save the
+                                        changes to local storage.
+                                    </li>
+                                    <li>Call the renderTodos() function to update the displayed todos on the page.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Delete a todo:
+                        <ul>
+                            <li>
+                                Attach a click event listener to the todoList element.
+                            </li>
+                            <li>
+                                When a click event occurs on an element with the class delete-btn, perform the following steps:
+                                <ul>
+                                    <li>Retrieve the ID of the parent element (list item) from the data-id attribute.</li>
+                                    <li>Filter out the todo with the matching ID from the todos array.</li>
+                                    <li>Save the updated todos array to local storage.</li>
+                                    <li>Call the renderTodos() function to update the displayed todos on the page.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Complete a todo:
+                        <ul>
+                            <li>
+                                Attach a click event listener to the todoList element.
+                            </li>
+                            <li>
+                                When a click event occurs on an element with the class complete-btn, perform the following steps:
+                                <ul>
+                                    <li>Retrieve the ID of the parent element (list item) from the data-id attribute.</li>
+                                    <li>Find the corresponding todo in the todos array.</li>
+                                    <li>Toggle the completion status of the todo (true to false, false to true).</li>
+                                    <li>Save the updated todos array to local storage.</li>
+                                    <li>Call the renderTodos() function to update the displayed todos on the page.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Render todos:
+                        <ul>
+                            <li>Clear the contents of the todoList element.</li>
+                            <li>
+                                Iterate over each todo in the todos array and create the necessary HTML elements to display them.
+                            </li>
+                            <li>Apply appropriate CSS styling.</li>
+                        </ul>
+                    </li>
+                </ul>
+        </div>
+
+        <div class="slide">
+            <h2>Conclusion</h2>
+            <p>
+                There it is... my Javascript check-in! 
+            </p>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>
